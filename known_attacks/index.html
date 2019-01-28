@@ -266,30 +266,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#race-conditions42" title="Race Conditions*" class="md-nav__link">
-    Race Conditions*
+  <a href="#reentrancy" title="Reentrancy" class="md-nav__link">
+    Reentrancy
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#reentrancy" title="Reentrancy" class="md-nav__link">
-    Reentrancy
+  <a href="#reentrancy-on-a-single-function" title="Reentrancy on a Single Function¶" class="md-nav__link">
+    Reentrancy on a Single Function¶
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cross-function-race-conditions" title="Cross-function Race Conditions" class="md-nav__link">
-    Cross-function Race Conditions
+  <a href="#cross-function-reentrancy" title="Cross-function Reentrancy" class="md-nav__link">
+    Cross-function Reentrancy
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#pitfalls-in-race-condition-solutions" title="Pitfalls in Race Condition Solutions" class="md-nav__link">
-    Pitfalls in Race Condition Solutions
+  <a href="#pitfalls-in-reentrancy-solutions" title="Pitfalls in Reentrancy Solutions" class="md-nav__link">
+    Pitfalls in Reentrancy Solutions
   </a>
   
 </li>
@@ -300,8 +300,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#transaction-ordering-dependence-tod-front-running" title="Transaction-Ordering Dependence (TOD) / Front Running" class="md-nav__link">
-    Transaction-Ordering Dependence (TOD) / Front Running
+  <a href="#front-running-transaction-ordering-dependence" title="Front Running (別名 Transaction-Ordering Dependence)" class="md-nav__link">
+    Front Running (別名 Transaction-Ordering Dependence)
   </a>
   
 </li>
@@ -318,6 +318,19 @@
     Integer Overflow and Underflow
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#underflow-in-depth-storage-manipulation" title="Underflow in Depth: Storage Manipulation" class="md-nav__link">
+    Underflow in Depth: Storage Manipulation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -330,6 +343,33 @@
         <li class="md-nav__item">
   <a href="#dos-with-block-gas-limit" title="DoS with Block Gas Limit" class="md-nav__link">
     DoS with Block Gas Limit
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dos" title="無制限の操作によるコントラクトのガスリミットDoS" class="md-nav__link">
+    無制限の操作によるコントラクトのガスリミットDoS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gas-limit-dos-on-the-network-via-block-stuffing" title="Gas Limit DoS on the Network via Block Stuffing" class="md-nav__link">
+    Gas Limit DoS on the Network via Block Stuffing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#insufficient-gas-griefing" title="Insufficient gas griefing" class="md-nav__link">
+    Insufficient gas griefing
   </a>
   
 </li>
@@ -361,6 +401,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#other-vulnerabilities" title="Other Vulnerabilities" class="md-nav__link">
+    Other Vulnerabilities
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -378,6 +425,18 @@
   <li class="md-nav__item">
     <a href="../software_engineering/" title="リスクの備え方" class="md-nav__link">
       リスクの備え方
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../tokens/" title="トークン固有の推奨事項" class="md-nav__link">
+      トークン固有の推奨事項
     </a>
   </li>
 
@@ -412,6 +471,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../security_eips/" title="セキュリティ関連EIP" class="md-nav__link">
+      セキュリティ関連EIP
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../security_notifications/" title="セキュリティに関する情報" class="md-nav__link">
       セキュリティに関する情報
     </a>
@@ -424,8 +495,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../future_improvements/" title="Future improvements" class="md-nav__link">
-      Future improvements
+    <a href="../bibliography/" title="スマートコントラクトのセキュリティに関する参考文献" class="md-nav__link">
+      スマートコントラクトのセキュリティに関する参考文献
     </a>
   </li>
 
@@ -436,8 +507,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../bibliography/" title="Smart Contract Security Bibliography" class="md-nav__link">
-      Smart Contract Security Bibliography
+    <a href="../bug_bounty_list/" title="スマートコントラクトのバグバウンティプログラム" class="md-nav__link">
+      スマートコントラクトのバグバウンティプログラム
     </a>
   </li>
 
@@ -449,13 +520,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
     
-    <label class="md-nav__link" for="nav-11">
+    <label class="md-nav__link" for="nav-13">
       About
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-11">
+      <label class="md-nav__title" for="nav-13">
         About
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -521,30 +592,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#race-conditions42" title="Race Conditions*" class="md-nav__link">
-    Race Conditions*
+  <a href="#reentrancy" title="Reentrancy" class="md-nav__link">
+    Reentrancy
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#reentrancy" title="Reentrancy" class="md-nav__link">
-    Reentrancy
+  <a href="#reentrancy-on-a-single-function" title="Reentrancy on a Single Function¶" class="md-nav__link">
+    Reentrancy on a Single Function¶
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cross-function-race-conditions" title="Cross-function Race Conditions" class="md-nav__link">
-    Cross-function Race Conditions
+  <a href="#cross-function-reentrancy" title="Cross-function Reentrancy" class="md-nav__link">
+    Cross-function Reentrancy
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#pitfalls-in-race-condition-solutions" title="Pitfalls in Race Condition Solutions" class="md-nav__link">
-    Pitfalls in Race Condition Solutions
+  <a href="#pitfalls-in-reentrancy-solutions" title="Pitfalls in Reentrancy Solutions" class="md-nav__link">
+    Pitfalls in Reentrancy Solutions
   </a>
   
 </li>
@@ -555,8 +626,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#transaction-ordering-dependence-tod-front-running" title="Transaction-Ordering Dependence (TOD) / Front Running" class="md-nav__link">
-    Transaction-Ordering Dependence (TOD) / Front Running
+  <a href="#front-running-transaction-ordering-dependence" title="Front Running (別名 Transaction-Ordering Dependence)" class="md-nav__link">
+    Front Running (別名 Transaction-Ordering Dependence)
   </a>
   
 </li>
@@ -573,6 +644,19 @@
     Integer Overflow and Underflow
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#underflow-in-depth-storage-manipulation" title="Underflow in Depth: Storage Manipulation" class="md-nav__link">
+    Underflow in Depth: Storage Manipulation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -585,6 +669,33 @@
         <li class="md-nav__item">
   <a href="#dos-with-block-gas-limit" title="DoS with Block Gas Limit" class="md-nav__link">
     DoS with Block Gas Limit
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dos" title="無制限の操作によるコントラクトのガスリミットDoS" class="md-nav__link">
+    無制限の操作によるコントラクトのガスリミットDoS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gas-limit-dos-on-the-network-via-block-stuffing" title="Gas Limit DoS on the Network via Block Stuffing" class="md-nav__link">
+    Gas Limit DoS on the Network via Block Stuffing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#insufficient-gas-griefing" title="Insufficient gas griefing" class="md-nav__link">
+    Insufficient gas griefing
   </a>
   
 </li>
@@ -616,6 +727,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#other-vulnerabilities" title="Other Vulnerabilities" class="md-nav__link">
+    Other Vulnerabilities
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -635,11 +753,11 @@
                 
                   <h1>既知の攻撃方法</h1>
                 
-                <p>以下は既知の攻撃方法の一覧です。スマートコントラクトを書く上でこれらの対策を行ってください。</p>
-<h2 id="race-conditions42">Race Conditions<sup><a href='#footnote-race-condition-terminology'>*</a></sup><a class="headerlink" href="#race-conditions42" title="Permanent link">&para;</a></h2>
+                <p>以下は、スマートコントラクトを作成する際に注意し、防御する必要がある既知の攻撃の一覧です。</p>
+<h2 id="reentrancy">Reentrancy<a class="headerlink" href="#reentrancy" title="Permanent link">&para;</a></h2>
 <p>外部コントラクトを呼び出す際の主要な危険の1つは、コントロールフローを引き継ぎ、呼び出し関数が期待していなかったデータを変更できることです。
 このクラスのバグはいろいろな形を取ることができ、DAOの崩壊につながった主要なバグの両方がこの種のバグでした。</p>
-<h3 id="reentrancy">Reentrancy<a class="headerlink" href="#reentrancy" title="Permanent link">&para;</a></h3>
+<h3 id="reentrancy-on-a-single-function">Reentrancy on a Single Function¶<a class="headerlink" href="#reentrancy-on-a-single-function" title="Permanent link">&para;</a></h3>
 <p>このバグの最初のバージョンには、関数の最初の呼び出しが終了する前に、繰り返し呼び出される可能性のある関数が含まれていました。
 これにより、関数のさまざまな呼び出しが破壊的なやり方で相互作用する可能性があります。</p>
 <div class="highlight"><pre><span></span><span class="c1">// INSECURE</span>
@@ -652,8 +770,8 @@
 <span class="p">}</span>
 </pre></div>
 
-<p>機能の最後までユーザーの残高が0に設定されていないため、2回目以降の呼び出しは引き続き成功し、何度も何度も残高を回収します。
-非常によく似たバグが、The DAOの脆弱性の1つでした。</p>
+<p>関数の最後までユーザーの残高が0に設定されていないため、2回目以降の呼び出しは引き続き成功し、何度も何度も残高を回収します。
+非常によく似たバグが、The DAO攻撃の脆弱性の1つでした。</p>
 <p>この問題を避ける最も良い方法は、<a href="https://github.com/ConsenSys/smart-contract-best-practices#send-vs-call-value"><code>call.value()()</code>の代わりに<code>send()</code> を使うことです</a>。
 これにより外部コードの実行を防ぎます。</p>
 <p>ただし、外部呼び出しを削除できない場合、この攻撃を防ぐ最も簡単な方法は、必要な内部作業をすべて完了するまで外部関数を呼び出さないようにすることです。</p>
@@ -668,7 +786,7 @@
 
 <p><code>withdrawBalance()</code>と呼ばれる別の関数があった場合、それは潜在的に同じ攻撃の対象となるため、
 信頼できないコントラクトを呼び出す関数を信頼できないものとして扱わなければなりません。 潜在的な解決策の詳細については、以下を参照してください。</p>
-<h3 id="cross-function-race-conditions">Cross-function Race Conditions<a class="headerlink" href="#cross-function-race-conditions" title="Permanent link">&para;</a></h3>
+<h3 id="cross-function-reentrancy">Cross-function Reentrancy<a class="headerlink" href="#cross-function-reentrancy" title="Permanent link">&para;</a></h3>
 <p>攻撃者は同じ状態を共有する2つの異なる機能を使用して同様の攻撃を行うこともできます。</p>
 <div class="highlight"><pre><span></span><span class="c1">// INSECURE</span>
 <span class="kd">mapping</span> <span class="p">(</span><span class="kt">address</span> <span class="o">=&gt;</span> <span class="kt">uint</span><span class="p">)</span> <span class="kr">private</span> <span class="n">userBalances</span><span class="p">;</span>
@@ -690,12 +808,12 @@
 <p>この場合、攻撃者は <code>withdrawBalance</code>で外部呼び出しでコードが実行されるときに<code>transfer()</code>を呼び出します。
 残高はまだ0に設定されていないので、すでに引き出しを受けていてもトークンを転送することができます。この脆弱性は、The DAOへの攻撃にも使用されていました。</p>
 <p>同じ解決策が、同じ警告で動作します。
-この例では、両方の関数が同じ契約の一部であったことにも注意してください。
+この例では、両方の関数が同じコントラクトの一部であったことにも注意してください。
 ただし、同じコントラクトが複数のコントラクトを共有している場合、複数のコントラクトで同じバグが発生する可能性があります。</p>
-<h3 id="pitfalls-in-race-condition-solutions">Pitfalls in Race Condition Solutions<a class="headerlink" href="#pitfalls-in-race-condition-solutions" title="Permanent link">&para;</a></h3>
-<p>競合状態は複数の機能、さらには複数のコントラクトにわたって発生する可能性があるため、再入を防止するためのソリューションは十分ではありません。</p>
-<p>代わりに、最初にすべての内部作業を終了してから、外部関数を呼び出すことを推奨しました。
-このルールは、慎重に従うと競争条件を避けることができます。
+<h3 id="pitfalls-in-reentrancy-solutions">Pitfalls in Reentrancy Solutions<a class="headerlink" href="#pitfalls-in-reentrancy-solutions" title="Permanent link">&para;</a></h3>
+<p>再入可能性は複数の関数、さらには複数のコントラクトにまたがって発生する可能性があるため、単一の関数で再入可能性を防ぐことを目的とした解決策では不十分です。</p>
+<p>そうではなく、最初にすべての内部作業（つまり、状態の変更）を終了してから、外部関数を呼び出すことを推奨します。
+この規則を慎重に守れば、再入可能性による脆弱性を避けることができます。
 しかし、外部関数をあまりにも早く呼び出さないようにするだけでなく、外部関数を呼び出す関数を呼び出さないようにする必要があります。
 たとえば、以下は安全ではありません。</p>
 <div class="highlight"><pre><span></span><span class="c1">// INSECURE</span>
@@ -703,8 +821,8 @@
 <span class="kd">mapping</span> <span class="p">(</span><span class="kt">address</span> <span class="o">=&gt;</span> <span class="kt">bool</span><span class="p">)</span> <span class="kr">private</span> <span class="n">claimedBonus</span><span class="p">;</span>
 <span class="kd">mapping</span> <span class="p">(</span><span class="kt">address</span> <span class="o">=&gt;</span> <span class="kt">uint</span><span class="p">)</span> <span class="kr">private</span> <span class="n">rewardsForA</span><span class="p">;</span>
 
-<span class="kd">function</span> <span class="n">withdraw</span><span class="p">(</span><span class="kt">address</span> <span class="n">recipient</span><span class="p">)</span> <span class="kr">public</span> <span class="p">{</span>
-    <span class="kt">uint</span> <span class="n">amountToWithdraw</span> <span class="o">=</span> <span class="n">userBalances</span><span class="p">[</span><span class="n">recipient</span><span class="p">];</span>
+<span class="kd">function</span> <span class="n">withdrawReward</span><span class="p">(</span><span class="kt">address</span> <span class="n">recipient</span><span class="p">)</span> <span class="kr">public</span> <span class="p">{</span>
+    <span class="kt">uint</span> <span class="n">amountToWithdraw</span> <span class="o">=</span> <span class="n">rewardsForA</span><span class="p">[</span><span class="n">recipient</span><span class="p">];</span>
     <span class="n">rewardsForA</span><span class="p">[</span><span class="n">recipient</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="n">require</span><span class="p">(</span><span class="n">recipient</span><span class="p">.</span><span class="nb">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">amountToWithdraw</span><span class="p">)());</span>
 <span class="p">}</span>
@@ -713,19 +831,19 @@
     <span class="n">require</span><span class="p">(</span><span class="o">!</span><span class="n">claimedBonus</span><span class="p">[</span><span class="n">recipient</span><span class="p">]);</span> <span class="c1">// Each recipient should only be able to claim the bonus once</span>
 
     <span class="n">rewardsForA</span><span class="p">[</span><span class="n">recipient</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">100</span><span class="p">;</span>
-    <span class="n">withdraw</span><span class="p">(</span><span class="n">recipient</span><span class="p">);</span> <span class="c1">// At this point, the caller will be able to execute getFirstWithdrawalBonus again.</span>
+    <span class="n">withdrawReward</span><span class="p">(</span><span class="n">recipient</span><span class="p">);</span> <span class="c1">// At this point, the caller will be able to execute getFirstWithdrawalBonus again.</span>
     <span class="n">claimedBonus</span><span class="p">[</span><span class="n">recipient</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
-<p><code>getFirstWithdrawalBonus()</code>は外部コントラクトを直接呼び出さなくても、 <code>withdraw()</code>の呼び出しは競合状態に脆弱にするのに十分です。
-したがって、 <code>withdraw()</code>も信頼できないように扱う必要があります。</p>
+<p><code>getFirstWithdrawalBonus()</code>が外部のコントラクトを直接呼び出すことはありませんが、<code>withdrawReward()</code>を呼び出すだけで、再入可能性の影響を受けやすくなります。
+したがって、あなたは<code>withdrawReward()</code>をあたかもそれが信頼できないものとして扱う必要があります。</p>
 <div class="highlight"><pre><span></span><span class="kd">mapping</span> <span class="p">(</span><span class="kt">address</span> <span class="o">=&gt;</span> <span class="kt">uint</span><span class="p">)</span> <span class="kr">private</span> <span class="n">userBalances</span><span class="p">;</span>
 <span class="kd">mapping</span> <span class="p">(</span><span class="kt">address</span> <span class="o">=&gt;</span> <span class="kt">bool</span><span class="p">)</span> <span class="kr">private</span> <span class="n">claimedBonus</span><span class="p">;</span>
 <span class="kd">mapping</span> <span class="p">(</span><span class="kt">address</span> <span class="o">=&gt;</span> <span class="kt">uint</span><span class="p">)</span> <span class="kr">private</span> <span class="n">rewardsForA</span><span class="p">;</span>
 
-<span class="kd">function</span> <span class="n">untrustedWithdraw</span><span class="p">(</span><span class="kt">address</span> <span class="n">recipient</span><span class="p">)</span> <span class="kr">public</span> <span class="p">{</span>
-    <span class="kt">uint</span> <span class="n">amountToWithdraw</span> <span class="o">=</span> <span class="n">userBalances</span><span class="p">[</span><span class="n">recipient</span><span class="p">];</span>
+<span class="kd">function</span> <span class="n">untrustedWithdrawReward</span><span class="p">(</span><span class="kt">address</span> <span class="n">recipient</span><span class="p">)</span> <span class="kr">public</span> <span class="p">{</span>
+    <span class="kt">uint</span> <span class="n">amountToWithdraw</span> <span class="o">=</span> <span class="n">rewardsForA</span><span class="p">[</span><span class="n">recipient</span><span class="p">];</span>
     <span class="n">rewardsForA</span><span class="p">[</span><span class="n">recipient</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="n">require</span><span class="p">(</span><span class="n">recipient</span><span class="p">.</span><span class="nb">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">amountToWithdraw</span><span class="p">)());</span>
 <span class="p">}</span>
@@ -735,16 +853,16 @@
 
     <span class="n">claimedBonus</span><span class="p">[</span><span class="n">recipient</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
     <span class="n">rewardsForA</span><span class="p">[</span><span class="n">recipient</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">100</span><span class="p">;</span>
-    <span class="n">untrustedWithdraw</span><span class="p">(</span><span class="n">recipient</span><span class="p">);</span> <span class="c1">// claimedBonus has been set to true, so reentry is impossible</span>
+    <span class="n">untrustedWithdrawReward</span><span class="p">(</span><span class="n">recipient</span><span class="p">);</span> <span class="c1">// claimedBonus has been set to true, so reentry is impossible</span>
 <span class="p">}</span>
 </pre></div>
 
-<p>再入力が不可能であることに加えて、<a href="https://github.com/ConsenSys/smart-contract-best-practices#mark-untrusted-contracts">信頼できない関数がマークされてます。</a>
+<p>再入が不可能であることに加えて、<a href="https://github.com/ConsenSys/smart-contract-best-practices#mark-untrusted-contracts">信頼できない関数がマークされてます。</a>
 この同じパターンは、すべてのレベルで繰り返されます。
-<code>untrustedGetFirstWithdrawalBonus()</code>は外部コントラクトを呼び出す <code>untrustedWithdraw()</code>を呼び出すので、
+<code>untrustedGetFirstWithdrawalBonus()</code>は外部コントラクトを呼び出す <code>untrustedWithdrawReward()</code>を呼び出すので、
 <code>untrustedGetFirstWithdrawalBonus()</code>も安全でないものとして扱わなければなりません。</p>
 <p>しばしば提案される別の解決策は、<a href="https://en.wikipedia.org/wiki/Mutual_exclusion">mutex</a>です。
-これにより、ロックの所有者だけが変更できるように、状態を「ロック」することができます。 簡単な例は次のようになります。</p>
+これにより、ロックをしたオーナーだけが変更できるように、状態を「ロック」することができます。 簡単な例は次のようになります。</p>
 <div class="highlight"><pre><span></span><span class="c1">// Note: This is a rudimentary example, and mutexes are particularly useful where there is substantial logic and/or shared state</span>
 <span class="kd">mapping</span> <span class="p">(</span><span class="kt">address</span> <span class="o">=&gt;</span> <span class="kt">uint</span><span class="p">)</span> <span class="kr">private</span> <span class="n">balances</span><span class="p">;</span>
 <span class="kt">bool</span> <span class="kr">private</span> <span class="n">lockBalances</span><span class="p">;</span>
@@ -770,7 +888,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<p>ユーザーが最初の呼び出しが終了する前に <code>withdraw()</code>をもう一度呼び出そうとすると、ロックによって何も効果がありません。
+<p>ユーザーが最初の呼び出しが終了する前に <code>withdraw()</code>をもう一度呼び出そうとすると、ロックはそれが効果を発揮するのを防ぎます。
 これは効果的なパターンかもしれませんが、協力が必要な複数のコントラクトがある場合は面倒です。
 以下は安全ではありません。</p>
 <div class="highlight"><pre><span></span><span class="c1">// INSECURE</span>
@@ -779,12 +897,13 @@
     <span class="kt">address</span> <span class="kr">private</span> <span class="n">lockHolder</span><span class="p">;</span>
 
     <span class="kd">function</span> <span class="n">getLock</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">require</span><span class="p">(</span><span class="n">lockHolder</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">require</span><span class="p">(</span><span class="n">lockHolder</span> <span class="o">==</span> <span class="kt">address</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
         <span class="n">lockHolder</span> <span class="o">=</span> <span class="nb">msg</span><span class="p">.</span><span class="n">sender</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="kd">function</span> <span class="n">releaseLock</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">lockHolder</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">require</span><span class="p">(</span><span class="nb">msg</span><span class="p">.</span><span class="n">sender</span> <span class="o">==</span> <span class="n">lockHolder</span><span class="p">);</span>
+        <span class="n">lockHolder</span> <span class="o">=</span> <span class="kt">address</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="kd">function</span> <span class="n">set</span><span class="p">(</span><span class="kt">uint</span> <span class="n">newState</span><span class="p">)</span> <span class="p">{</span>
@@ -795,35 +914,20 @@
 </pre></div>
 
 <p>攻撃者は <code>getLock()</code>を呼び出し、 <code>releaseLock()</code>を決して呼び出すことはできません。
-彼らがこれをすると、契約は永遠にロックされ、それ以上の変更はできません。
-競合状態を防ぐためにmutexを使用する場合は、ロックを要求して解放する方法がないことを慎重に確認する必要があります。
-(デッドロックやライブロックのようなmutexを使ってプログラミングするときには、潜在的な危険性がありますので、mutexに書かれている大量の文献を参考にしてください。</p>
-<p><a name='footnote-race-condition-terminology'></a></p>
-<div style='font-size: 80%; display: inline;'>* Some may object to the use of the term <i>race condition</i> since Ethereum does not currently have true parallelism. However, there is still the fundamental feature of logically distinct processes contending for resources, and the same sorts of pitfalls and potential solutions apply.</div>
-
-<h2 id="transaction-ordering-dependence-tod-front-running">Transaction-Ordering Dependence (TOD) / Front Running<a class="headerlink" href="#transaction-ordering-dependence-tod-front-running" title="Permanent link">&para;</a></h2>
-<p>上記は攻撃者が単一のトランザクションで悪質なコードを実行することを含む競合状態の例です。
-以下は、ブロックチェーンに固有の競合状態の異なるタイプです。つまり、トランザクションの順序(ブロック内)が操作の対象になりやすいという事実です。</p>
-<p>しばらくの間、トランザクションはmempool内にあるので、ブロック内に入る前に、どのアクションが起こるかを知ることができます。
-これは、分権化された市場のように、いくつかのトークンを購入するトランザクションを見ることができ、
-他のトランザクションが含まれる前に実装された市場秩序のために厄介なことがあります。
-特定のコントラクトそのものになるため、これを防ぐことは困難です。
-たとえば、市場では、バッチオークションを実装する方がよいでしょう(これはまた、高頻度取引の懸念から保護します)。
+彼らがこれをすると、コントラクトは永遠にロックされ、それ以上の変更はできません。
+再入可能性を防ぐためにmutexを使用する場合は、ロックを要求して解放する方法がないことを慎重に確認する必要があります。
+(デッドロックやライブロックのようなmutexを使ってプログラミングするときには、他にも潜在的な危険性がありますので、mutexに書かれている大量の文献を参考にしてください。</p>
+<h2 id="front-running-transaction-ordering-dependence">Front Running (別名 Transaction-Ordering Dependence)<a class="headerlink" href="#front-running-transaction-ordering-dependence" title="Permanent link">&para;</a></h2>
+<p>上記は、攻撃者が1つのトランザクション内で悪意のあるコードを実行することを含む再入可能性の例です。
+以下は、ブロックチェーンに固有の異なる種類の攻撃、つまりトランザクション自体の順序（ブロック内）は簡単に操作されるという事実があります。</p>
+<p>トランザクションはしばらくの間mempool内にあるので、ブロックに含まれる前に、どのようなアクションが発生するのかを知ることができます。
+これは、いくつかのトークンを購入する取引が見られる分散型マーケットや、他の取引が含まれる前に実行される成行注文のようなものにとっては面倒なことがあります。
+特定のコントラクト自体に起因するため、これに対する保護は困難です。
+たとえば、マーケットでは、一括オークションを実装することをお勧めします（これにより、高頻度の取引の懸念からも保護されます）。
 事前コミットスキームを使用する別の方法もあります。後で詳細を記します。</p>
 <h2 id="timestamp-dependence">Timestamp Dependence<a class="headerlink" href="#timestamp-dependence" title="Permanent link">&para;</a></h2>
-<p>ブロックのタイムスタンプは、マイナーによって操作され、タイムスタンプの直接的および間接的な使用をすべて考慮する必要があることに注意してください。
-*ブロック数*と*平均ブロック時間*は時間の見積もりに使用できますが、ブロック時間が変更される可能性がある(キャスパーで予想される変更など)将来の証拠ではありません。</p>
-<div class="highlight"><pre><span></span><span class="kt">uint</span> <span class="n">someVariable</span> <span class="o">=</span> <span class="nb">now</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="nb">now</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// the now can be manipulated by the miner</span>
-
-<span class="p">}</span>
-
-<span class="k">if</span> <span class="p">((</span><span class="n">someVariable</span> <span class="o">-</span> <span class="mi">100</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// someVariable can be manipulated by the miner</span>
-
-<span class="p">}</span>
-</pre></div>
-
+<p>ブロックのタイムスタンプはマイナーによって操作される可能性があることに注意してください。そしてタイムスタンプのすべての直接的および間接的な使用が考慮されるべきです。
+タイムスタンプの依存関係に関する設計上の考慮事項については、<a href="../recommendations/#_20">推奨する実装方法</a>セクションを参照してください。</p>
 <h2 id="integer-overflow-and-underflow">Integer Overflow and Underflow<a class="headerlink" href="#integer-overflow-and-underflow" title="Permanent link">&para;</a></h2>
 <p>簡単なトークン転送を想定します。</p>
 <div class="highlight"><pre><span></span><span class="kd">mapping</span> <span class="p">(</span><span class="kt">address</span> <span class="o">=&gt;</span> <span class="kt">uint256</span><span class="p">)</span> <span class="kr">public</span> <span class="n">balanceOf</span><span class="p">;</span>
@@ -848,7 +952,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<p>天びんが最大のuint値(2 ^ 256)に達すると、ゼロに丸く戻ります。これにより、その状態がチェックされます。
+<p>バランスが最大uint値（2 ^ 256）に達すると、ゼロに戻ります。これにより、その状態がチェックされます。
 これは、実装に応じて適切かどうかは関係ありません。
 uint値にこのような大きな値に近づく機会があるかどうかについて考えてみましょう。
 uint変数がどのように状態を変え、そのような変更を行う権限を持っているかについて考えます。
@@ -857,7 +961,43 @@ uint値を更新する関数を呼び出すことができるユーザーがい�
 ユーザーが一度に1だけインクリメントできる場合は、この制限に達する実現可能な方法がないため、おそらく安全です。</p>
 <p>アンダーフローについても同様です。 uintが0より小さくなると、アンダーフローが発生し、最大値に設定されます。
 uint8、uint16、uint24 ...などの小さなデータ型には注意してください。さらに簡単に最大値に達することができます。</p>
-<p><a href="https://github.com/ethereum/solidity/issues/796#issuecomment-253578925">20 cases for overflow and underflow</a>.</p>
+<p><a href="https://github.com/ethereum/solidity/issues/796#issuecomment-253578925">オーバーフローとアンダーフローが発生するケースは約20件あります。</a>.</p>
+<h3 id="underflow-in-depth-storage-manipulation">Underflow in Depth: Storage Manipulation<a class="headerlink" href="#underflow-in-depth-storage-manipulation" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/Arachnid/uscc/tree/master/submissions-2017/doughoyte">Doug Hoyte's submission</a> to the 2017 underhanded solidity contest received <a href="http://u.solidity.cc/">an honorable mention</a>. The entry is interesting, because it raises the concerns about how C-like underflow might affect Solidity storage. Here is a simplified version:</p>
+<div class="highlight"><pre><span></span><span class="kd">contract</span> <span class="n">UnderflowManipulation</span> <span class="p">{</span>
+    <span class="kt">address</span> <span class="kr">public</span> <span class="n">owner</span><span class="p">;</span>
+    <span class="kt">uint256</span> <span class="kr">public</span> <span class="n">manipulateMe</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="kd">function</span> <span class="n">UnderflowManipulation</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">owner</span> <span class="o">=</span> <span class="nb">msg</span><span class="p">.</span><span class="n">sender</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">uint</span><span class="p">[]</span> <span class="kr">public</span> <span class="n">bonusCodes</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="n">pushBonusCode</span><span class="p">(</span><span class="kt">uint</span> <span class="n">code</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">bonusCodes</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">code</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="n">popBonusCode</span><span class="p">()</span>  <span class="p">{</span>
+        <span class="n">require</span><span class="p">(</span><span class="n">bonusCodes</span><span class="p">.</span><span class="n">length</span> <span class="o">&gt;=</span><span class="mi">0</span><span class="p">);</span>  <span class="c1">// this is a tautology</span>
+        <span class="n">bonusCodes</span><span class="p">.</span><span class="n">length</span><span class="o">--</span><span class="p">;</span> <span class="c1">// an underflow can be caused here</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="n">modifyBonusCode</span><span class="p">(</span><span class="kt">uint</span> <span class="n">index</span><span class="p">,</span> <span class="kt">uint</span> <span class="n">update</span><span class="p">)</span>  <span class="p">{</span> 
+        <span class="n">require</span><span class="p">(</span><span class="n">index</span> <span class="o">&lt;</span> <span class="n">bonusCodes</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>
+        <span class="n">bonusCodes</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">update</span><span class="p">;</span> <span class="c1">// write to any index less than bonusCodes.length</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+
+<p>In general, the variable <code>manipulateMe</code>'s location cannot be influenced without going through the <code>keccak256</code>, which is infeasible. However, since dynamic arrays are stored sequentially, if a malicious actor wanted to change <code>manipulateMe</code> all they would need to do is:</p>
+<ul>
+<li>Call <code>popBonusCode</code> to underflow (Note: <code>array.pop()</code> method <a href="https://github.com/ethereum/solidity/blob/v0.5.0/Changelog.md">was added</a> in Solidity 0.5.0)</li>
+<li>Compute the storage location of <code>manipulateMe</code></li>
+<li>Modify and update <code>manipulateMe</code>'s value using <code>modifyBonusCode</code></li>
+</ul>
+<p>In practice, this array would be immediately pointed out as fishy, but buried under more complex smart contract architecture, it can arbitrarily allow malicious changes to constant variables.</p>
+<p>When considering use of a dynamic array, a container data scructure is a good practice. The Solidity CRUD <a href="https://medium.com/@robhitchens/solidity-crud-part-1-824ffa69509a">part 1</a> and <a href="https://medium.com/@robhitchens/solidity-crud-part-2-ed8d8b4f74ec">part 2</a> articles are good resources.</p>
 <p><a name="dos-with-unexpected-revert"></a></p>
 <h2 id="dos-with-unexpected-revert">DoS with (Unexpected) revert<a class="headerlink" href="#dos-with-unexpected-revert" title="Permanent link">&para;</a></h2>
 <p>簡単なオークションのコントラクトを想定します。</p>
@@ -880,12 +1020,10 @@ uint8、uint16、uint24 ...などの小さなデータ型には注意してく�
 <p>古いリーダーを払い戻そうとすると、払い戻しが失敗した場合に元のリーダーに戻ります。
 これは、悪意のある入札者が、そのアドレスへの払い戻しが常に失敗することを確実にしながら、リーダーになれることを意味します。
 このようにして、他の誰かが <code>bid()</code>関数を呼び出すのを防ぐことができ、リーダーを永遠にとどめることができます。
-前に説明したように、
-<a href="https://github.com/ConsenSys/smart-contract-best-practices/#favor-pull-over-push-payments">pull payment system</a>
-を代わりに設定することをお勧めします。</p>
-<p>もう1つの例は、契約によってユーザー(例えば、クラウドファンディングコントラクトの支援者)に支払うために配列を反復する場合である。
+前に説明したように、<a href="../recommendations#_8">プル型の支払い</a>を代わりに設定することをお勧めします。</p>
+<p>もう1つの例は、コントラクトによってユーザー(例えば、クラウドファンディングコントラクトの支援者)に支払うために配列を反復する場合です。
 それぞれの支払いが成功することを確認することが一般的です。
-そうでない場合は、元に戻す必要があります。 問題は、1つの呼び出しが失敗した場合、支払いシステム全体を元に戻すことです。
+そうでない場合は、元に戻す必要があります。問題は、1つの呼び出しが失敗した場合、支払いシステム全体を元に戻すことです。
 つまり、ループは完了しません。 1つのアドレスで強制的にエラーが発生するため、誰も支払いを受けません。</p>
 <div class="highlight"><pre><span></span><span class="kt">address</span><span class="p">[]</span> <span class="kr">private</span> <span class="n">refundAddresses</span><span class="p">;</span>
 <span class="kd">mapping</span> <span class="p">(</span><span class="kt">address</span> <span class="o">=&gt;</span> <span class="kt">uint</span><span class="p">)</span> <span class="kr">public</span> <span class="n">refunds</span><span class="p">;</span>
@@ -898,16 +1036,17 @@ uint8、uint16、uint24 ...などの小さなデータ型には注意してく�
 <span class="p">}</span>
 </pre></div>
 
-<p>ここでも推奨の解決策は <a href="#favor-pull-over-push-payments">favor pull over push payments</a>です。</p>
+<p>ここでも推奨の解決策は <a href="../recommendations#_8">プッシュ型よりもプル型が望ましい</a>ことになります。</p>
 <h2 id="dos-with-block-gas-limit">DoS with Block Gas Limit<a class="headerlink" href="#dos-with-block-gas-limit" title="Permanent link">&para;</a></h2>
-<p>あなたは前の例に別の問題があることに気づいたかもしれません。
-一度に全員に払い戻すことで、ブロックガス制限にぶつかる危険性があります。
-各Ethereumブロックは、ある最大量の計算を処理することができます。それを越えようとすると、あなたのトランザクションは失敗します。</p>
+<p>各ブロックには、使用できるガスの量、つまり実行できる量の計算に上限があります。
+これがブロックガスリミットです。消費されたガスがこの制限を超えると、トランザクションは失敗します。これは、DoSの可能性へとつながります。</p>
+<h3 id="dos">無制限の操作によるコントラクトのガスリミットDoS<a class="headerlink" href="#dos" title="Permanent link">&para;</a></h3>
+<p>あなたは前の例に別の問題があることに気づいたかもしれません。一度に全員に払い戻すことで、ブロックガス制限にぶつかる危険性があります。</p>
 <p>これは、意図的な攻撃がなくても問題につながる可能性があります。
 しかし、攻撃者が必要なガスの量を操作できるならば、特に悪いことです。
 前の例の場合、攻撃者はアドレスの束を追加することができ、それぞれは非常に小さな払い戻しを必要とします。
 したがって、各攻撃者のアドレスを払い戻すためのガスコストは、ガス制限を超えてしまい、払い戻し取引がまったく起こらないようになる可能性があります。</p>
-<p>これが<a href="#favor-pull-over-push-payments">favor pull over push payments</a>のもうひとつの理由です。</p>
+<p>これが<a href="../recommendations#_8">プッシュ型よりもプル型が望ましい</a>ことのもうひとつの理由です。</p>
 <p>未知のサイズの配列を絶対にループする必要がある場合は、複数のブロックを取る可能性があるため、複数のトランザクションが必要になる可能性があります。
 次の例のように、あなたがどれぐらい離れているかを追跡し、その時点から再開できるようにする必要があります。</p>
 <div class="highlight"><pre><span></span><span class="kd">struct</span> <span class="n">Payee</span> <span class="p">{</span>
@@ -930,9 +1069,50 @@ uint8、uint16、uint24 ...などの小さなデータ型には注意してく�
 
 <p><code>payOut()</code>関数の次の反復を待っている間に他のトランザクションが処理されても何の悪いことも起こらないようにする必要があります。
 このパターンは、絶対に必要な場合にのみ使用してください。</p>
+<h3 id="gas-limit-dos-on-the-network-via-block-stuffing">Gas Limit DoS on the Network via Block Stuffing<a class="headerlink" href="#gas-limit-dos-on-the-network-via-block-stuffing" title="Permanent link">&para;</a></h3>
+<p>Even if your contract does not contain an unbounded loop, an attacker can prevent other transactions from being included in the blockchain for several blocks by placing computationally intensive transactions with a high enough gas price.</p>
+<p>To do this, the attacker can issue several transactions which will consume the entire gas limit, with a high enough gas price to be included as soon as the next block is mined. No gas price can guarantee inclusion in the block, but the higher the price is, the higher is the chance.</p>
+<p>If the attack succeeds, no other transactions will be included in the block. Sometimes, an attacker's goal is to block transactions to a specific contract prior to specific time.</p>
+<p>This attack <a href="https://osolmaz.com/2018/10/18/anatomy-block-stuffing">was conducted</a> on Fomo3D, a gambling app. The app was designed to reward the last address that purchased a "key". Each key purchase extended the timer, and the game ended once the timer went to 0. The attacker bought a key and then stuffed 13 blocks in a row until the timer was triggered and the payout was released. Transactions sent by attacker took 7.9 million gas on each block, so the gas limit allowed a few small "send" transactions (which take 21,000 gas each), but disallowed any calls to the <code>buyKey()</code> function (which costs 300,000+ gas).</p>
+<p>A Block Stuffing attack can be used on any contract requiring an action within a certain time period. However, as with any attack, it is only profitable when the expected reward exceeds its cost. Cost of this attack is directly proportional to the number of blocks which need to be stuffed. If a large payout can be obtained by preventing actions from other participants, your contract will likely be targeted by such an attack. </p>
+<h2 id="insufficient-gas-griefing">Insufficient gas griefing<a class="headerlink" href="#insufficient-gas-griefing" title="Permanent link">&para;</a></h2>
+<p>This attack may be possible on a contract which accepts generic data and uses it to make a call another contract (a 'sub-call') via the low level <code>address.call()</code> function, as is often the case with multisignature and transaction relayer contracts.</p>
+<p>If the call fails, the contract has two options:</p>
+<ol>
+<li>revert the whole transaction</li>
+<li>continue execution.</li>
+</ol>
+<p>Take the following example of a simplified <code>Relayer</code> contract which continues execution regardless of the outcome of the subcall:</p>
+<div class="highlight"><pre><span></span><span class="kd">contract</span> <span class="n">Relayer</span> <span class="p">{</span>
+    <span class="kd">mapping</span> <span class="p">(</span><span class="kt">bytes</span> <span class="o">=&gt;</span> <span class="kt">bool</span><span class="p">)</span> <span class="n">executed</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="n">relay</span><span class="p">(</span><span class="kt">bytes</span> <span class="n">_data</span><span class="p">)</span> <span class="kr">public</span> <span class="p">{</span>
+        <span class="c1">// replay protection; do not call the same transaction twice</span>
+        <span class="n">require</span><span class="p">(</span><span class="n">executed</span><span class="p">[</span><span class="n">_data</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&quot;Duplicate call&quot;</span><span class="p">);</span>
+        <span class="n">executed</span><span class="p">[</span><span class="n">_data</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="n">innerContract</span><span class="p">.</span><span class="nb">call</span><span class="p">(</span><span class="kt">bytes4</span><span class="p">(</span><span class="n">keccak256</span><span class="p">(</span><span class="s">&quot;execute(bytes)&quot;</span><span class="p">)),</span> <span class="n">_data</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>This contract allows transaction relaying. Someone who wants to make a transaction but can't execute it by himself (e.g. due to the lack of ether to pay for gas) can sign data that he wants to pass and transfer the data with his signature over any medium. A third party "forwarder" can then submit this transaction to the network on behalf of the user.</p>
+<p>If given just the right amount of gas, the <code>Relayer</code> would complete execution recording the <code>_data</code>argument in the <code>executed</code> mapping, but the subcall would fail because it received insufficient gas to complete execution.</p>
+<p>Note: When a contract makes a sub-call to another contract, the EVM limits the gas forwarded to <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-150.md">to 63/64 of the remaining gas</a>, </p>
+<p>An attacker can use this to censor transactions, causing them to fail by sending them with a low amount of gas. This attack is a form of "<a href="https://en.wikipedia.org/wiki/Griefer">griefing</a>": It doesn't directly benefit the attacker, but causes grief for the victim. A dedicated attacker, willing to consistently spend a small amount of gas could theoretically censor all transactions this way, if they were the first to submit them to <code>Relayer</code>.</p>
+<p>One way to address this is to implement logic requiring forwarders to provide enough gas to finish the subcall. If the miner tried to conduct the attack in this scenario, the <code>require</code> statement would fail and the inner call would revert. A user can specify a minimum gasLimit along with the other data (in this example, typically the <code>_gasLimit</code> value would be verified by a signature, but that is ommitted for simplicity in this case).</p>
+<div class="highlight"><pre><span></span><span class="c1">// contract called by Relayer</span>
+<span class="kd">contract</span> <span class="n">Executor</span> <span class="p">{</span>
+    <span class="kd">function</span> <span class="n">execute</span><span class="p">(</span><span class="kt">bytes</span> <span class="n">_data</span><span class="p">,</span> <span class="kt">uint</span> <span class="n">_gasLimit</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">require</span><span class="p">(</span><span class="n">gasleft</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">_gasLimit</span><span class="p">);</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Another solution is to permit only trusted accounts to mine the transaction. </p>
 <h2 id="forcibly-sending-ether-to-a-contract">Forcibly Sending Ether to a Contract<a class="headerlink" href="#forcibly-sending-ether-to-a-contract" title="Permanent link">&para;</a></h2>
 <p>Etherをコントラクトに強制的に送信することは、フォールバック機能をトリガーすることなく可能です。
-これは、フォールバック機能に重要なロジックを配置したり、契約の残高に基づいて計算を行う際に重要な考慮事項です。
+これは、フォールバック機能に重要なロジックを配置したり、コントラクトの残高に基づいて計算を行う際に重要な考慮事項です。
 次の例を考えてみましょう。</p>
 <div class="highlight"><pre><span></span><span class="kd">contract</span> <span class="n">Vulnerable</span> <span class="p">{</span>
     <span class="kd">function</span> <span class="p">()</span> <span class="kr">payable</span> <span class="p">{</span>
@@ -960,6 +1140,8 @@ uint8、uint16、uint24 ...などの小さなデータ型には注意してく�
 <p><a href="https://github.com/ethereum/EIPs/issues/150">EIP 150</a>ハードフォークの時点では、Call Depth攻撃はもはや意味がありません。
 <sup><a href='http://ethereum.stackexchange.com/questions/9398/how-does-eip-150-change-the-call-depth-attack'>*</a></sup>
 (すべてのガスは1024の深さ制限に達する前に十分消費されるでしょう)</p>
+<h2 id="other-vulnerabilities">Other Vulnerabilities<a class="headerlink" href="#other-vulnerabilities" title="Permanent link">&para;</a></h2>
+<p>The <a href="https://smartcontractsecurity.github.io/SWC-registry/">Smart Contract Weakness Classification Registry</a> offers a complete and up-to-date catalogue of known smart contract vulnerabilities and anti-patterns along with real-world examples. Browsing the registry is a good way of keeping up-to-date with the latest attacks.</p>
                 
                   
                 

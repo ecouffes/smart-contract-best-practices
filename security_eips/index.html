@@ -8,7 +8,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://github.com/msykd/smart-contract-best-practices/future_improvements/">
+        <link rel="canonical" href="https://github.com/msykd/smart-contract-best-practices/security_eips/">
       
       
         <meta name="author" content="msykd">
@@ -35,7 +35,7 @@
     
     
       
-        <title>Future improvements - Ethereum Smart Contract Best Practices(日本語訳)</title>
+        <title>セキュリティ関連EIP - Ethereum Smart Contract Best Practices(日本語訳)</title>
       
     
     
@@ -97,7 +97,7 @@
             
               
             
-            Future improvements
+            セキュリティ関連EIP
           
         </span>
       </div>
@@ -267,6 +267,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../tokens/" title="トークン固有の推奨事項" class="md-nav__link">
+      トークン固有の推奨事項
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../documentation_procedures/" title="ドキュメント化の手法" class="md-nav__link">
       ドキュメント化の手法
     </a>
@@ -289,18 +301,6 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../security_notifications/" title="セキュリティに関する情報" class="md-nav__link">
-      セキュリティに関する情報
-    </a>
-  </li>
-
-    
-      
-      
-      
-
   
 
 
@@ -310,11 +310,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Future improvements
+        セキュリティ関連EIP
       </label>
     
-    <a href="./" title="Future improvements" class="md-nav__link md-nav__link--active">
-      Future improvements
+    <a href="./" title="セキュリティ関連EIP" class="md-nav__link md-nav__link--active">
+      セキュリティ関連EIP
     </a>
     
       
@@ -326,8 +326,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#functional-languages" title="Functional languages" class="md-nav__link">
-    Functional languages
+  <a href="#eip" title="セキュリティ関連EIP" class="md-nav__link">
+    セキュリティ関連EIP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final" title="Final（正式採用）" class="md-nav__link">
+    Final（正式採用）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#draft" title="Draft（検討段階）" class="md-nav__link">
+    Draft（検討段階）
   </a>
   
 </li>
@@ -347,8 +361,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../bibliography/" title="Smart Contract Security Bibliography" class="md-nav__link">
-      Smart Contract Security Bibliography
+    <a href="../security_notifications/" title="セキュリティに関する情報" class="md-nav__link">
+      セキュリティに関する情報
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../bibliography/" title="スマートコントラクトのセキュリティに関する参考文献" class="md-nav__link">
+      スマートコントラクトのセキュリティに関する参考文献
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../bug_bounty_list/" title="スマートコントラクトのバグバウンティプログラム" class="md-nav__link">
+      スマートコントラクトのバグバウンティプログラム
     </a>
   </li>
 
@@ -360,13 +398,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
     
-    <label class="md-nav__link" for="nav-11">
+    <label class="md-nav__link" for="nav-13">
       About
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-11">
+      <label class="md-nav__title" for="nav-13">
         About
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -432,8 +470,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#functional-languages" title="Functional languages" class="md-nav__link">
-    Functional languages
+  <a href="#eip" title="セキュリティ関連EIP" class="md-nav__link">
+    セキュリティ関連EIP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final" title="Final（正式採用）" class="md-nav__link">
+    Final（正式採用）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#draft" title="Draft（検討段階）" class="md-nav__link">
+    Draft（検討段階）
   </a>
   
 </li>
@@ -452,17 +504,30 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/msykd/smart-contract-best-practices/edit/master/docs/future_improvements.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/msykd/smart-contract-best-practices/edit/master/docs/security_eips.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Future improvements</h1>
+                  <h1>セキュリティ関連EIP</h1>
                 
-                <h2 id="functional-languages">Functional languages<a class="headerlink" href="#functional-languages" title="Permanent link">&para;</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page is quite outdated</p>
-</div>
-<p>Functional languages give certain guarantees over procedural languages like Solidity, namely immutability within a function and strong compile time checking. This can reduce the risk of errors by providing deterministic behavior (for more see <a href="https://plus.google.com/u/0/events/cmqejp6d43n5cqkdl3iu0582f4k">this</a>, Curry-Howard correspondence, and linear logic).</p>
+                <h3 id="eip">セキュリティ関連EIP<a class="headerlink" href="#eip" title="Permanent link">&para;</a></h3>
+<p>EVMがどのように機能するかを理解するためであったり、スマートコントラクトシステムを開発する際に適切なベストプラクティスを教示してくれたりする点において、次のEIPを踏まえておくことは大切なことです。</p>
+<p>ただし、下記が網羅しているリストであるとは思わないでください。</p>
+<h3 id="final">Final（正式採用）<a class="headerlink" href="#final" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://eips.ethereum.org/EIPS/eip-155">EIP 155</a> Simple replay attack protection - Ethereum Classicなどの他のチェーン、さまざまなテストネット、またはコンソーシアムチェーンを操作せずに、Ethereumメインネットで機能するトランザクションを送信する方法を提供します。</li>
+<li><a href="https://eips.ethereum.org/EIPS/eip-214">EIP 214</a> コントラクトを呼び出している間の状態の変更を禁止しつつ、別のコントラクト（またはそれ自体）を呼び出すために使用できる新しいオペコードを追加します。</li>
+<li><a href="https://eips.ethereum.org/EIPS/eip-607">EIP 607</a> Hardfork Meta: Spurious Dragon - EIP 155からSimple Replay Attack Protectionを実装しました。</li>
+<li><a href="https://eips.ethereum.org/EIPS/eip-779">EIP 779</a> Hardfork Meta: DAO Fork - 「DAO Fork」という名前のハードフォークに含まれる変更を文書化しています。他のハードフォークとは異なり、DAO Forkはプロトコルを変更しませんでした。
+というのは、DAOフォークは、アカウント（「child DAO」コントラクト）のether残高を特定のアカウント（「WithdrawDAO」コントラクト）に移す「イレギュラーな状態変更」でした。</li>
+</ul>
+<h3 id="draft">Draft（検討段階）<a class="headerlink" href="#draft" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://eips.ethereum.org/EIPS/eip-1470">EIP 1470</a> Smart Contract Weakness Classification - Ethereumスマートコントラクトのセキュリティ上の弱点に対する分類スキームを提案します（SWC）</li>
+<li><a href="https://eips.ethereum.org/EIPS/eip-1051">EIP 1051</a> Overflow checking for the EVM - 効率的な検出とオーバーフローの防止を可能にする2つの新しいオペコードを追加します。</li>
+<li><a href="https://eips.ethereum.org/EIPS/eip-1271">EIP 1271</a> Standard Signature Validation Method for Contracts - 多くのスマートコントラクトの現在の設計では、
+コントラクトがプライベートキーを持たず、したがってメッセージに直接署名することができないため、コントラクトアカウントがスマートコントラクトとやり取りすることができません。
+ここでの提案は、アカウントがコントラクトであるときに提供された署名が有効であるかどうかをコントラクトが検証するための標準的な方法の概要を示しています。</li>
+</ul>
                 
                   
                 
@@ -481,7 +546,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../security_notifications/" title="セキュリティに関する情報" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../security_tools/" title="便利なツール" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -490,19 +555,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                セキュリティに関する情報
+                便利なツール
               </span>
             </div>
           </a>
         
         
-          <a href="../bibliography/" title="Smart Contract Security Bibliography" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../security_notifications/" title="セキュリティに関する情報" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Smart Contract Security Bibliography
+                セキュリティに関する情報
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -361,6 +361,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../tokens/" title="トークン固有の推奨事項" class="md-nav__link">
+      トークン固有の推奨事項
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../documentation_procedures/" title="ドキュメント化の手法" class="md-nav__link">
       ドキュメント化の手法
     </a>
@@ -385,6 +397,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../security_eips/" title="セキュリティ関連EIP" class="md-nav__link">
+      セキュリティ関連EIP
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../security_notifications/" title="セキュリティに関する情報" class="md-nav__link">
       セキュリティに関する情報
     </a>
@@ -397,8 +421,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../future_improvements/" title="Future improvements" class="md-nav__link">
-      Future improvements
+    <a href="../bibliography/" title="スマートコントラクトのセキュリティに関する参考文献" class="md-nav__link">
+      スマートコントラクトのセキュリティに関する参考文献
     </a>
   </li>
 
@@ -409,8 +433,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../bibliography/" title="Smart Contract Security Bibliography" class="md-nav__link">
-      Smart Contract Security Bibliography
+    <a href="../bug_bounty_list/" title="スマートコントラクトのバグバウンティプログラム" class="md-nav__link">
+      スマートコントラクトのバグバウンティプログラム
     </a>
   </li>
 
@@ -422,13 +446,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
     
-    <label class="md-nav__link" for="nav-11">
+    <label class="md-nav__link" for="nav-13">
       About
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-11">
+      <label class="md-nav__title" for="nav-13">
         About
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -599,7 +623,7 @@
 <p>本番リリース前にバグを発見できるようにしましょう。</p>
 <ul>
 <li>コントラクトを徹底的にテストし、新しい攻撃方法が発見された時にテストを追加する</li>
-<li><a href="#bounties">バグバウンティプログラム</a>による報奨金制度を提供する</li>
+<li><a href="../software_engineering/#_7">バグバウンティプログラム</a>による報奨金制度を提供する</li>
 <li>段階的にリリースし、各段階で使用量とテストを増やす</li>
 </ul>
 <h2 id="_3">コントラクトをシンプルに保つ<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
@@ -624,6 +648,8 @@
 <li>悪質なコードを実行したり、制御フローを変更したりする可能性のある外部のコントラクトをコールする際は十分注意してください。</li>
 <li>コントラクトコードは公開されていることを理解してください。悪意を持って呼び出される可能性があります。データは誰でも見ることが出来ます。</li>
 <li>ガスコストとブロックガスの制限を念頭に置いてください。</li>
+<li>タイムスタンプはブロックチェーンでは不正確であることに注意してください。マイナーは数秒のマージン内でトランザクションの実行時間に影響を与える可能性があります。</li>
+<li>乱数性はブロックチェーン上では自明ではありませんが、ブロックチェーン上においては、乱数生成へのほとんどのアプローチは不正行為によって影響を受ける場合があります。</li>
 </ul>
 <h2 id="vs">根本的なトレードオフ: シンプルさ vs 複雑さ<a class="headerlink" href="#vs" title="Permanent link">&para;</a></h2>
 <p>スマートコントラクトの構造とセキュリティを評価する際に考慮すべき複数の根本的なトレードオフがあります。

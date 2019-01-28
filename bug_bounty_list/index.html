@@ -8,7 +8,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://github.com/msykd/smart-contract-best-practices/security_tools/">
+        <link rel="canonical" href="https://github.com/msykd/smart-contract-best-practices/bug_bounty_list/">
       
       
         <meta name="author" content="msykd">
@@ -35,7 +35,7 @@
     
     
       
-        <title>便利なツール - Ethereum Smart Contract Best Practices(日本語訳)</title>
+        <title>スマートコントラクトのバグバウンティプログラム - Ethereum Smart Contract Best Practices(日本語訳)</title>
       
     
     
@@ -97,7 +97,7 @@
             
               
             
-            便利なツール
+            スマートコントラクトのバグバウンティプログラム
           
         </span>
       </div>
@@ -289,71 +289,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        便利なツール
-      </label>
-    
-    <a href="./" title="便利なツール" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../security_tools/" title="便利なツール" class="md-nav__link">
       便利なツール
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="ヴィジュアライゼーション" class="md-nav__link">
-    ヴィジュアライゼーション
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="静的・動的解析" class="md-nav__link">
-    静的・動的解析
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="脆弱性の分類とテストケース" class="md-nav__link">
-    脆弱性の分類とテストケース
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="テストカバレッジ" class="md-nav__link">
-    テストカバレッジ
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" title="リンター" class="md-nav__link">
-    リンター
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -397,11 +337,18 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../bug_bounty_list/" title="スマートコントラクトのバグバウンティプログラム" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+    <a href="./" title="スマートコントラクトのバグバウンティプログラム" class="md-nav__link md-nav__link--active">
       スマートコントラクトのバグバウンティプログラム
     </a>
+    
   </li>
 
     
@@ -480,48 +427,6 @@
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="ヴィジュアライゼーション" class="md-nav__link">
-    ヴィジュアライゼーション
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="静的・動的解析" class="md-nav__link">
-    静的・動的解析
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="脆弱性の分類とテストケース" class="md-nav__link">
-    脆弱性の分類とテストケース
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="テストカバレッジ" class="md-nav__link">
-    テストカバレッジ
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" title="リンター" class="md-nav__link">
-    リンター
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -532,46 +437,22 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/msykd/smart-contract-best-practices/edit/master/docs/security_tools.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/msykd/smart-contract-best-practices/edit/master/docs/bug_bounty_list.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>便利なツール</h1>
+                  <h1>スマートコントラクトのバグバウンティプログラム</h1>
                 
-                <h3 id="_1">ヴィジュアライゼーション<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+                <p>以下は、現行のバグバウンティプログラムです。バウンティのスコープ内において、スマートコントラクトに焦点を当てたものか、
+スマートコントラクトを含んだプログラムとなっています。IssueやPRは歓迎されています。それによって、新たなバウンティを追加したり、無効になったバウンティを取り除いたりができるようになります。</p>
 <ul>
-<li><a href="https://github.com/ConsenSys/surya">Sūrya</a> - スマートコントラクトシステムのためのユーティリティツール。コントラクトの構造に関する多数の視覚的な出力と情報を提供します。関数呼び出しグラフの照会もサポートします。</li>
-<li><a href="https://github.com/raineorshine/solgraph">Solgraph</a> - Solidityコントラクトの関数の制御フローを視覚化し、潜在的なセキュリティ脆弱性を強調表示するDOTグラフを生成します。</li>
-<li><a href="https://github.com/ethereum/evmlab">EVM Lab</a> - EVMと対話するための豊富なツールパッケージ。 VM、Etherchain API、およびトレースビューアを含みます。</li>
-<li><a href="https://github.com/fergarrui/ethereum-graph-debugger">ethereum-graph-debugger</a> - グラフィカルEVMデバッガ。プログラム制御フローグラフ全体を表示します。</li>
-</ul>
-<h3 id="_2">静的・動的解析<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://github.com/ConsenSys/mythril-classic">Mythril Classic</a> - スマートコントラクトセキュリティ用のスイスアーミーナイフ。</li>
-<li><a href="https://mythx.io">MythX</a> - EthereumスマートコントラクトSDLC用のセキュリティツール。</li>
-<li><a href="https://github.com/trailofbits/slither">Slither</a> - 多くの一般的なSolidity問題の検出機能を備えた静的解析フレームワーク。汚染と値のトラッキングが可能。Pythonで書かれています。</li>
-<li><a href="https://github.com/trailofbits/echidna">Echidna</a> - Ethereumソフトウェア用の唯一の利用可能なFuzzer（テストデータの自動生成機能）。プロパティテストを使用して、スマートコントラクトを破る悪意のある入力情報を生成します。</li>
-<li><a href="https://github.com/trailofbits/manticore">Manticore</a> - <a href="https://asciinema.org/a/haJU2cl0R0Q3jB9wd733LVosL">EVMをサポート</a>する動的バイナリ解析ツール。</li>
-<li><a href="https://github.com/melonproject/oyente">Oyente</a> - <a href="http://www.comp.nus.edu.sg/~loiluu/papers/oyente.pdf">こちらのホワイトペーパー</a>に基づいて、Ethereumコードを分析して一般的な脆弱性を見つけます。</li>
-<li><a href="https://securify.chainsecurity.com/">Securify</a> - スマートコントラクト用の完全自動化されたオンラインスタティックアナライザー。脆弱性パターンに基づくセキュリティレポートを提供します。</li>
-<li><a href="https://tool.smartdec.net">SmartCheck</a> - セキュリティの脆弱性とベストプラクティスに関するSolidityのソースコードの静的解析。</li>
-<li><a href="https://github.com/quoscient/octopus">Octopus</a> - EVMと(e)WASMをサポートするブロックチェーンスマートコントラクト用のセキュリティ解析ツール。</li>
-</ul>
-<h3 id="_3">脆弱性の分類とテストケース<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://github.com/SmartContractSecurity/SWC-registry/">SWC-registry</a> - SWC（Smart Contract Weakness Classification）の定義と脆弱性を持ったスマートコントラクトの実際のサンプルの大規模なリポジトリ。</li>
-<li><a href="https://smartcontractsecurity.github.io/SWC-registry/">SWC Pages</a> - Github Pagesに掲載されたSWCレジストリリポジトリ。</li>
-</ul>
-<h3 id="_4">テストカバレッジ<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://github.com/sc-forks/solidity-coverage">solidity-coverage</a> - Solidityテストのためのコードカバレッジ。</li>
-</ul>
-<h3 id="_5">リンター<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>リンターは、コードにスタイルと構成規則を適用することでコードの品質を向上させ、コードを読みやすくレビューしやすくします。</p>
-<ul>
-<li><a href="https://github.com/federicobond/solcheck">Solcheck</a> - JSで書かれ、eslintに強くインスパイアされたSolidityのリンター。</li>
-<li><a href="https://github.com/weifund/solint">Solint</a> - 一貫性のある規則を守り、Solidityスマートコントラクトのエラーを回避するのに役立くSolidityのリンター。</li>
-<li><a href="https://github.com/duaraghav8/Solium">Solium</a> - Solidityのリンター。</li>
-<li><a href="https://github.com/protofire/solhint">Solhint</a> - セキュリティとスタイルガイドの両方の検証を提供するSolidityのリンター。</li>
+<li><a href="https://0xproject.com/wiki#Bug-Bounty">0xProject</a>: 2018年9月にローンチ、最大支払額$100,000</li>
+<li><a href="https://medium.com/fluidity/smart-contracts-and-bug-bounty-ad75733eb53">Airswap</a></li>
+<li><a href="https://www.augur.net/bounty/">Augur</a>: 2018年10月にローンチ、最大支払額$250,000</li>
+<li><a href="https://wiki.aragon.org/dev/bug_bounty/">Aragon</a>: 2018年10月にローンチ、最大支払額$250,000</li>
+<li><a href="https://blog.brickblock.io/join-the-brickblock-bug-bounty-program-7b431f2bcc02">BrickBlock</a>: 2018年9月にローンチ、最大支払額100ETH</li>
+<li><a href="https://melonport.com/bug-bounty">MelonPort</a></li>
+<li><a href="https://www.parity.io/bug-bounty/">Parity</a>: クライアントコードとコントラクトコードを含む</li>
+<li><a href="https://bounty.ethereum.org/#bounty-scope">Ethereum Foundation</a>: クライアント、solidity、vyper等、広範にわたるプログラム</li>
 </ul>
                 
                   
@@ -591,7 +472,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../documentation_procedures/" title="ドキュメント化の手法" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../bibliography/" title="スマートコントラクトのセキュリティに関する参考文献" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -600,19 +481,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                ドキュメント化の手法
+                スマートコントラクトのセキュリティに関する参考文献
               </span>
             </div>
           </a>
         
         
-          <a href="../security_eips/" title="セキュリティ関連EIP" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../about/reviewers/" title="Reviewers" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                セキュリティ関連EIP
+                Reviewers
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
