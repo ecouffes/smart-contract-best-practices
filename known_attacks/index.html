@@ -396,6 +396,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#constantinople-reentrancy-attack" title="Constantinople Reentrancy Attack" class="md-nav__link">
+    Constantinople Reentrancy Attack
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -722,6 +729,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#constantinople-reentrancy-attack" title="Constantinople Reentrancy Attack" class="md-nav__link">
+    Constantinople Reentrancy Attack
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -811,7 +825,7 @@
 この例では、両方の関数が同じコントラクトの一部であったことにも注意してください。
 ただし、同じコントラクトが複数のコントラクトを共有している場合、複数のコントラクトで同じバグが発生する可能性があります。</p>
 <h3 id="pitfalls-in-reentrancy-solutions">Pitfalls in Reentrancy Solutions<a class="headerlink" href="#pitfalls-in-reentrancy-solutions" title="Permanent link">&para;</a></h3>
-<p>再入可能性は複数の関数、さらには複数のコントラクトにまたがって発生する可能性があるため、単一の関数で再入可能性を防ぐことを目的とした解決策では不十分です。</p>
+<p>Reentrancy（再入可能性）は複数の関数、さらには複数のコントラクトにまたがって発生する可能性があるため、単一の関数で再入可能性を防ぐことを目的とした解決策では不十分です。</p>
 <p>そうではなく、最初にすべての内部作業（つまり、状態の変更）を終了してから、外部関数を呼び出すことを推奨します。
 この規則を慎重に守れば、再入可能性による脆弱性を避けることができます。
 しかし、外部関数をあまりにも早く呼び出さないようにするだけでなく、外部関数を呼び出す関数を呼び出さないようにする必要があります。
@@ -857,7 +871,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<p>再入が不可能であることに加えて、<a href="https://github.com/ConsenSys/smart-contract-best-practices#mark-untrusted-contracts">信頼できない関数がマークされてます。</a>
+<p>再入が不可能であることに加えて、<a href="../recommendations#_5">信頼できない関数がマークされてます。</a>
 この同じパターンは、すべてのレベルで繰り返されます。
 <code>untrustedGetFirstWithdrawalBonus()</code>は外部コントラクトを呼び出す <code>untrustedWithdrawReward()</code>を呼び出すので、
 <code>untrustedGetFirstWithdrawalBonus()</code>も安全でないものとして扱わなければなりません。</p>
@@ -952,7 +966,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<p>バランスが最大uint値（2 ^ 256）に達すると、ゼロに戻ります。これにより、その状態がチェックされます。
+<p>残高が最大uint値（2 ^ 256）に達すると、ゼロに戻ります。これにより、その状態がチェックされます。
 これは、実装に応じて適切かどうかは関係ありません。
 uint値にこのような大きな値に近づく機会があるかどうかについて考えてみましょう。
 uint変数がどのように状態を変え、そのような変更を行う権限を持っているかについて考えます。
@@ -963,7 +977,8 @@ uint値を更新する関数を呼び出すことができるユーザーがい�
 uint8、uint16、uint24 ...などの小さなデータ型には注意してください。さらに簡単に最大値に達することができます。</p>
 <p><a href="https://github.com/ethereum/solidity/issues/796#issuecomment-253578925">オーバーフローとアンダーフローが発生するケースは約20件あります。</a>.</p>
 <h3 id="underflow-in-depth-storage-manipulation">Underflow in Depth: Storage Manipulation<a class="headerlink" href="#underflow-in-depth-storage-manipulation" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/Arachnid/uscc/tree/master/submissions-2017/doughoyte">Doug Hoyte's submission</a> to the 2017 underhanded solidity contest received <a href="http://u.solidity.cc/">an honorable mention</a>. The entry is interesting, because it raises the concerns about how C-like underflow might affect Solidity storage. Here is a simplified version:</p>
+<p><a href="https://github.com/Arachnid/uscc/tree/master/submissions-2017/doughoyte">Doug Hoyteによる2017年のunderhanded solidity contest（悪意のあるコードを見つけるためのプログラミングコンテスト）への応募</a>が、<a href="http://u.solidity.cc/">名誉ある賞を受賞</a>しました。
+ このエントリは、CのようなアンダーフローがSolidityストレージにどのように影響するかについての懸念を提起するので、興味深いものです。以下に単純化されたバージョンを示します：</p>
 <div class="highlight"><pre><span></span><span class="kd">contract</span> <span class="n">UnderflowManipulation</span> <span class="p">{</span>
     <span class="kt">address</span> <span class="kr">public</span> <span class="n">owner</span><span class="p">;</span>
     <span class="kt">uint256</span> <span class="kr">public</span> <span class="n">manipulateMe</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
@@ -990,14 +1005,15 @@ uint8、uint16、uint24 ...などの小さなデータ型には注意してく�
 <span class="p">}</span>
 </pre></div>
 
-<p>In general, the variable <code>manipulateMe</code>'s location cannot be influenced without going through the <code>keccak256</code>, which is infeasible. However, since dynamic arrays are stored sequentially, if a malicious actor wanted to change <code>manipulateMe</code> all they would need to do is:</p>
+<p>一般的に言って、変数<code>manipulateMe</code>の位置は、<code>keccak256</code>を通さない限り影響を受けることはできません。影響を及ぼすことは実行不可能です。
+ただし、動的配列は順次格納されるため、悪意のある行為者が<code>manipulateMe</code>を変更したい場合は、次のようにします：</p>
 <ul>
-<li>Call <code>popBonusCode</code> to underflow (Note: <code>array.pop()</code> method <a href="https://github.com/ethereum/solidity/blob/v0.5.0/Changelog.md">was added</a> in Solidity 0.5.0)</li>
-<li>Compute the storage location of <code>manipulateMe</code></li>
-<li>Modify and update <code>manipulateMe</code>'s value using <code>modifyBonusCode</code></li>
+<li><code>popBonusCode</code>をアンダーフローするために呼び出します（注：<code>array.pop())</code>メソッドはSolidity 0.5.0で<a href="https://github.com/ethereum/solidity/blob/v0.5.0/Changelog.md">追加されました</a>）</li>
+<li><code>manipulateMe</code>の保管場所を算出します。</li>
+<li><code>modifyBonusCode</code>を使用して<code>manipulateMe</code>の値を変更および更新する</li>
 </ul>
-<p>In practice, this array would be immediately pointed out as fishy, but buried under more complex smart contract architecture, it can arbitrarily allow malicious changes to constant variables.</p>
-<p>When considering use of a dynamic array, a container data scructure is a good practice. The Solidity CRUD <a href="https://medium.com/@robhitchens/solidity-crud-part-1-824ffa69509a">part 1</a> and <a href="https://medium.com/@robhitchens/solidity-crud-part-2-ed8d8b4f74ec">part 2</a> articles are good resources.</p>
+<p>実際には、この配列はすぐに厄介であると指摘されます。しかし、より複雑なスマートコントラクトアーキテクチャの下に埋め込まれていると、定数への悪意のある変更を勝手に許可する可能性があります。</p>
+<p>動的配列の使用を検討する際には、コンテナー・データ構造が良い方法です。 Solidity CRUD <a href="https://medium.com/@robhitchens/solidity-crud-part-1-824ffa69509a">part 1</a>と<a href="https://medium.com/@robhitchens/solidity-crud-part-2-ed8d8b4f74ec">part 2</a>の記事は良い情報源です。</p>
 <p><a name="dos-with-unexpected-revert"></a></p>
 <h2 id="dos-with-unexpected-revert">DoS with (Unexpected) revert<a class="headerlink" href="#dos-with-unexpected-revert" title="Permanent link">&para;</a></h2>
 <p>簡単なオークションのコントラクトを想定します。</p>
@@ -1020,7 +1036,7 @@ uint8、uint16、uint24 ...などの小さなデータ型には注意してく�
 <p>古いリーダーを払い戻そうとすると、払い戻しが失敗した場合に元のリーダーに戻ります。
 これは、悪意のある入札者が、そのアドレスへの払い戻しが常に失敗することを確実にしながら、リーダーになれることを意味します。
 このようにして、他の誰かが <code>bid()</code>関数を呼び出すのを防ぐことができ、リーダーを永遠にとどめることができます。
-前に説明したように、<a href="../recommendations#_8">プル型の支払い</a>を代わりに設定することをお勧めします。</p>
+前に説明したように、<a href="../recommendations#push-pull">pull型の支払い</a>を代わりに設定することをお勧めします。</p>
 <p>もう1つの例は、コントラクトによってユーザー(例えば、クラウドファンディングコントラクトの支援者)に支払うために配列を反復する場合です。
 それぞれの支払いが成功することを確認することが一般的です。
 そうでない場合は、元に戻す必要があります。問題は、1つの呼び出しが失敗した場合、支払いシステム全体を元に戻すことです。
@@ -1036,7 +1052,7 @@ uint8、uint16、uint24 ...などの小さなデータ型には注意してく�
 <span class="p">}</span>
 </pre></div>
 
-<p>ここでも推奨の解決策は <a href="../recommendations#_8">プッシュ型よりもプル型が望ましい</a>ことになります。</p>
+<p>ここでも推奨の解決策は <a href="../recommendations#push-pull">push型よりもpull型が望ましい</a>ことになります。</p>
 <h2 id="dos-with-block-gas-limit">DoS with Block Gas Limit<a class="headerlink" href="#dos-with-block-gas-limit" title="Permanent link">&para;</a></h2>
 <p>各ブロックには、使用できるガスの量、つまり実行できる量の計算に上限があります。
 これがブロックガスリミットです。消費されたガスがこの制限を超えると、トランザクションは失敗します。これは、DoSの可能性へとつながります。</p>
@@ -1046,7 +1062,7 @@ uint8、uint16、uint24 ...などの小さなデータ型には注意してく�
 しかし、攻撃者が必要なガスの量を操作できるならば、特に悪いことです。
 前の例の場合、攻撃者はアドレスの束を追加することができ、それぞれは非常に小さな払い戻しを必要とします。
 したがって、各攻撃者のアドレスを払い戻すためのガスコストは、ガス制限を超えてしまい、払い戻し取引がまったく起こらないようになる可能性があります。</p>
-<p>これが<a href="../recommendations#_8">プッシュ型よりもプル型が望ましい</a>ことのもうひとつの理由です。</p>
+<p>これが<a href="../recommendations#push-pull">push型よりもpull型が望ましい</a>ことのもうひとつの理由です。</p>
 <p>未知のサイズの配列を絶対にループする必要がある場合は、複数のブロックを取る可能性があるため、複数のトランザクションが必要になる可能性があります。
 次の例のように、あなたがどれぐらい離れているかを追跡し、その時点から再開できるようにする必要があります。</p>
 <div class="highlight"><pre><span></span><span class="kd">struct</span> <span class="n">Payee</span> <span class="p">{</span>
@@ -1070,19 +1086,23 @@ uint8、uint16、uint24 ...などの小さなデータ型には注意してく�
 <p><code>payOut()</code>関数の次の反復を待っている間に他のトランザクションが処理されても何の悪いことも起こらないようにする必要があります。
 このパターンは、絶対に必要な場合にのみ使用してください。</p>
 <h3 id="gas-limit-dos-on-the-network-via-block-stuffing">Gas Limit DoS on the Network via Block Stuffing<a class="headerlink" href="#gas-limit-dos-on-the-network-via-block-stuffing" title="Permanent link">&para;</a></h3>
-<p>Even if your contract does not contain an unbounded loop, an attacker can prevent other transactions from being included in the blockchain for several blocks by placing computationally intensive transactions with a high enough gas price.</p>
-<p>To do this, the attacker can issue several transactions which will consume the entire gas limit, with a high enough gas price to be included as soon as the next block is mined. No gas price can guarantee inclusion in the block, but the higher the price is, the higher is the chance.</p>
-<p>If the attack succeeds, no other transactions will be included in the block. Sometimes, an attacker's goal is to block transactions to a specific contract prior to specific time.</p>
-<p>This attack <a href="https://osolmaz.com/2018/10/18/anatomy-block-stuffing">was conducted</a> on Fomo3D, a gambling app. The app was designed to reward the last address that purchased a "key". Each key purchase extended the timer, and the game ended once the timer went to 0. The attacker bought a key and then stuffed 13 blocks in a row until the timer was triggered and the payout was released. Transactions sent by attacker took 7.9 million gas on each block, so the gas limit allowed a few small "send" transactions (which take 21,000 gas each), but disallowed any calls to the <code>buyKey()</code> function (which costs 300,000+ gas).</p>
-<p>A Block Stuffing attack can be used on any contract requiring an action within a certain time period. However, as with any attack, it is only profitable when the expected reward exceeds its cost. Cost of this attack is directly proportional to the number of blocks which need to be stuffed. If a large payout can be obtained by preventing actions from other participants, your contract will likely be targeted by such an attack. </p>
+<p>コントラクトに無限のループが含まれていなくても、攻撃者は、十分に高いガス価格を備えた計算集約的トランザクションを配置することによって、他のトランザクションがブロックに取り込ませないようにすることが可能です。
+これを行うために、攻撃者は、ガスリミット全てまでを消費するいくつかのトランザクションを発行することができます。それらのトランザクションは、次のブロックがマイニングされるや否やブロックに取り込まれるほど十分に高いガス価格です。
+ガス価格でブロックに含めることを保証することはできませんが、価格が高いほど、チャンスは高くなります。</p>
+<p>攻撃が成功した場合、他のトランザクションはブロックに含まれません。往々にして、攻撃者の目的は、特定の時間まで、特定のコントラクトに対するトランザクションをブロックすることです。</p>
+<p>この攻撃はギャンブルアプリFomo3Dで<a href="https://osolmaz.com/2018/10/18/anatomy-block-stuffing">行われました</a>。アプリは「キー」を購入した最後のアドレスに報酬を与えるように設計されました。キーを購入するたびにタイマーが延長され、タイマーが0になるとゲームは終了します。
+攻撃者はキーを購入してから、タイマーがトリガーされて支払いが解放されるまで、連続して13ブロックを詰まらせました。
+攻撃者によって送信されたトランザクションは各ブロックで790万のガスを消費したため、ガスリミットによりいくつかの小さな「送信」トランザクション（それぞれ21,000ガスを消費）だけが許可されました。他方、<code>buyKey()</code>関数への呼び出しは許可されませんでした（これには300,000以上のガスが必要です）。</p>
+<p>Block Stuffing attackは、一定期間内に対応が必要なあらゆるコントラクトに対して使用できます。ただし、他の攻撃と同様に、予想される報酬（見返り）がその攻撃コストを超える場合にのみ有益です。
+この攻撃のコストは、詰まらせる必要があるブロックの数に正比例します。他の参加者からの行動を防ぐことによって大きな支払いが得られる場合、あなたのコントラクトはそのような攻撃の標的になるでしょう。</p>
 <h2 id="insufficient-gas-griefing">Insufficient gas griefing<a class="headerlink" href="#insufficient-gas-griefing" title="Permanent link">&para;</a></h2>
-<p>This attack may be possible on a contract which accepts generic data and uses it to make a call another contract (a 'sub-call') via the low level <code>address.call()</code> function, as is often the case with multisignature and transaction relayer contracts.</p>
-<p>If the call fails, the contract has two options:</p>
+<p>この攻撃は、汎用データを受け入れ、それを使って低レベルの<code>address.call()</code>関数を介して他のコントラクトを呼び出す（「サブコール」する）際に発生する可能性があります。マルチシグおよびトランザクションリレーのコントラクトではよくあることです。</p>
+<p>関数コールが失敗した場合、コントラクトには2つの選択肢があります。</p>
 <ol>
-<li>revert the whole transaction</li>
-<li>continue execution.</li>
+<li>トランザクション全体を元に戻す</li>
+<li>実行を続ける</li>
 </ol>
-<p>Take the following example of a simplified <code>Relayer</code> contract which continues execution regardless of the outcome of the subcall:</p>
+<p>サブコールの結果に関係なく実行を継続する単純化した<code>Relayer</code>コントラクトの例を取ります。</p>
 <div class="highlight"><pre><span></span><span class="kd">contract</span> <span class="n">Relayer</span> <span class="p">{</span>
     <span class="kd">mapping</span> <span class="p">(</span><span class="kt">bytes</span> <span class="o">=&gt;</span> <span class="kt">bool</span><span class="p">)</span> <span class="n">executed</span><span class="p">;</span>
 
@@ -1095,11 +1115,14 @@ uint8、uint16、uint24 ...などの小さなデータ型には注意してく�
 <span class="p">}</span>
 </pre></div>
 
-<p>This contract allows transaction relaying. Someone who wants to make a transaction but can't execute it by himself (e.g. due to the lack of ether to pay for gas) can sign data that he wants to pass and transfer the data with his signature over any medium. A third party "forwarder" can then submit this transaction to the network on behalf of the user.</p>
-<p>If given just the right amount of gas, the <code>Relayer</code> would complete execution recording the <code>_data</code>argument in the <code>executed</code> mapping, but the subcall would fail because it received insufficient gas to complete execution.</p>
-<p>Note: When a contract makes a sub-call to another contract, the EVM limits the gas forwarded to <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-150.md">to 63/64 of the remaining gas</a>, </p>
-<p>An attacker can use this to censor transactions, causing them to fail by sending them with a low amount of gas. This attack is a form of "<a href="https://en.wikipedia.org/wiki/Griefer">griefing</a>": It doesn't directly benefit the attacker, but causes grief for the victim. A dedicated attacker, willing to consistently spend a small amount of gas could theoretically censor all transactions this way, if they were the first to submit them to <code>Relayer</code>.</p>
-<p>One way to address this is to implement logic requiring forwarders to provide enough gas to finish the subcall. If the miner tried to conduct the attack in this scenario, the <code>require</code> statement would fail and the inner call would revert. A user can specify a minimum gasLimit along with the other data (in this example, typically the <code>_gasLimit</code> value would be verified by a signature, but that is ommitted for simplicity in this case).</p>
+<p>このコントラクトはトランザクションの中継を許可します。トランザクションを発行したいが自分でそれを実行することができない人（例：ガス代のEtherがないため）は、その人が渡したいデータに署名し、任意の媒体を介して自分の署名でデータを転送できます。
+その後、第三者の「フォワーダー（forwarder）」がユーザに代わってこのトランザクションをネットワークに送信できます。</p>
+<p>適切な量​​のガスが与えられた場合、<code>Relayer</code>は実行されたマッピングの_data引数を記録して実行を完了しますが、サブコールは実行を完了するのに不十分なガスを受け取ったため失敗します。</p>
+<p>注：あるコントラクトが別のコントラクトにサブコールをおこなうと、EVMは転送されるガスを<a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-150.md">残りのガスの63/64</a>に制限します。</p>
+<p>攻撃者はこれを使用してトランザクションを検閲し、少量のガスを使用して送信することでトランザクションを失敗させることができます。この攻撃は「<a href="https://en.wikipedia.org/wiki/Griefer">グリーフィング（griefing）</a>」の一形態です。
+それは直接攻撃者に利益をもたらすわけではありませんが、被害者に不利益をもたらします。</p>
+<p>これに対処する1つの方法は、フォワーダがサブコールを終了するのに十分なガスを提供することを要求するロジックを実装することです。マイナーがこのシナリオで攻撃を行おうとした場合、<code>require</code>ステートメントで失敗し、内部呼び出しは元に戻ります。
+ユーザーは他のデータと共に最小gasLimitを指定できます（この例では、通常<code>_gasLimit</code>値は署名によって検証されますが、この場合は簡略化のため省略されています。）。</p>
 <div class="highlight"><pre><span></span><span class="c1">// contract called by Relayer</span>
 <span class="kd">contract</span> <span class="n">Executor</span> <span class="p">{</span>
     <span class="kd">function</span> <span class="n">execute</span><span class="p">(</span><span class="kt">bytes</span> <span class="n">_data</span><span class="p">,</span> <span class="kt">uint</span> <span class="n">_gasLimit</span><span class="p">)</span> <span class="p">{</span>
@@ -1109,10 +1132,10 @@ uint8、uint16、uint24 ...などの小さなデータ型には注意してく�
 <span class="p">}</span>
 </pre></div>
 
-<p>Another solution is to permit only trusted accounts to mine the transaction. </p>
+<p>もう1つの解決策は、信頼できるアカウントだけにトランザクションの中継を許可することです。</p>
 <h2 id="forcibly-sending-ether-to-a-contract">Forcibly Sending Ether to a Contract<a class="headerlink" href="#forcibly-sending-ether-to-a-contract" title="Permanent link">&para;</a></h2>
-<p>Etherをコントラクトに強制的に送信することは、フォールバック機能をトリガーすることなく可能です。
-これは、フォールバック機能に重要なロジックを配置したり、コントラクトの残高に基づいて計算を行う際に重要な考慮事項です。
+<p>Etherをコントラクトに強制的に送信することは、fallback関数をトリガーすることなく可能です。
+これは、fallback関数に重要なロジックを配置したり、コントラクトの残高に基づいて計算を行う際に重要な考慮事項です。
 次の例を考えてみましょう。</p>
 <div class="highlight"><pre><span></span><span class="kd">contract</span> <span class="n">Vulnerable</span> <span class="p">{</span>
     <span class="kd">function</span> <span class="p">()</span> <span class="kr">payable</span> <span class="p">{</span>
@@ -1127,21 +1150,26 @@ uint8、uint16、uint24 ...などの小さなデータ型には注意してく�
 </pre></div>
 
 <p>このロジックはコントラクトへの支払いを拒否し、何か悪いことが起こらないようにしているようです。
-しかしながら、Etherを強制的にコントラクトに送り、それゆえ、そのバランスをゼロより大きくするためのいくつかの方法が存在します。</p>
-<p><code>selfdestruct</code>メソッドは、ユーザーが余分なEtherを送信する受益者を指定することを可能にします。(
-<a href="https://solidity.readthedocs.io/en/develop/security-considerations.html#sending-and-receiving-ether">does not trigger a contract's fallback function</a>)</p>
-<p>展開する前に、コントラクトのアドレスを<a href="https://github.com/Arachnid/uscc/tree/master/submissions-2017/ricmoo">precompute</a>に送信し、
-そのアドレスにEtherを送信することもできます。</p>
+しかしながら、Etherを強制的にコントラクトに送り、それゆえ、その残高をゼロより大きくするためのいくつかの方法が存在します。</p>
+<p><code>selfdestruct</code>コントラクトメソッドでは、ユーザーは受取人を指定して余分なEtherを送ることができます。
+<code>selfdestruct</code>は<a href="https://solidity.readthedocs.io/en/develop/security-considerations.html#sending-and-receiving-ether">コントラクトのfallback関数を起動させません</a>。</p>
+<p>コントラクトをデプロイする前に、コントラクトアドレスを<a href="https://github.com/Arachnid/uscc/tree/master/submissions-2017/ricmoo">事前計算</a>し、そのアドレスにEtherを送信することもできます。</p>
 <p>コントラクトエンジニアは、Etherを強制的に送ることができることに注意し、それに応じてロジックを設計する必要があります。
-一般的に、資金調達源をコントラクトに制限することはできないと仮定します。</p>
+一般に、資金源をあなたのコントラクトに制限することは不可能であると想定してください。</p>
 <h2 id="deprecatedhistorical-attacks">Deprecated/historical attacks<a class="headerlink" href="#deprecatedhistorical-attacks" title="Permanent link">&para;</a></h2>
-<p>これは、プロトコルの変更や強固性の向上により、もはや不可能な攻撃です。 後世のためにここに記録されています。</p>
+<p>これは、プロトコルの変更やSolidityの改善により、もはや不可能な攻撃です。後世のためにここに記録されています。</p>
 <h3 id="call-depth-attack-deprecated">Call Depth Attack (deprecated)<a class="headerlink" href="#call-depth-attack-deprecated" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/ethereum/EIPs/issues/150">EIP 150</a>ハードフォークの時点では、Call Depth攻撃はもはや意味がありません。
+<p><a href="https://github.com/ethereum/EIPs/issues/150">EIP 150</a>ハードフォークの時点では、Call Depth攻撃はもはや意味がありません
 <sup><a href='http://ethereum.stackexchange.com/questions/9398/how-does-eip-150-change-the-call-depth-attack'>*</a></sup>
-(すべてのガスは1024の深さ制限に達する前に十分消費されるでしょう)</p>
+(すべてのガスは1024の深さ制限に達する前に十分消費されるでしょう)。</p>
+<h3 id="constantinople-reentrancy-attack">Constantinople Reentrancy Attack<a class="headerlink" href="#constantinople-reentrancy-attack" title="Permanent link">&para;</a></h3>
+<p>2019年1月16日、Constantinopleプロトコルのアップグレードは<a href="https://eips.ethereum.org/EIPS/eip-1283">EIP 1283</a>によって可能にされたセキュリティ脆弱性のために延期されました。
+EIP 1283において、ダーティーマップを使用しないSSTOREの純粋なガス計測では、ダーティーストレージ書き込み時の過剰なガスコストを削減するための変更が提案されています。</p>
+<p>この変更により、特定の状況で以前から知られていた安全なwithdrawパターン（<code>.send()</code>および<code>.transfer()</code>）を安全でないものにする新たな再入可能性の可能性が生まれました<sup><a href='https://medium.com/chainsecurity/constantinople-enables-new-reentrancy-attack-ace4088297d9'>*</a></sup>。
+攻撃者は制御フローを乗っ取ってEIP 1283によって有効にされている残りのガスを使用する可能性があり、再入可能性による脆弱性をもたらす可能性があります。</p>
 <h2 id="other-vulnerabilities">Other Vulnerabilities<a class="headerlink" href="#other-vulnerabilities" title="Permanent link">&para;</a></h2>
-<p>The <a href="https://smartcontractsecurity.github.io/SWC-registry/">Smart Contract Weakness Classification Registry</a> offers a complete and up-to-date catalogue of known smart contract vulnerabilities and anti-patterns along with real-world examples. Browsing the registry is a good way of keeping up-to-date with the latest attacks.</p>
+<p><a href="https://smartcontractsecurity.github.io/SWC-registry/">Smart Contract Weakness Classification Registry</a>は、既知のスマートコントラクトの脆弱性とアンチパターンに関する完全で最新の一覧として、実例とともに提供されています。
+レジストリを参照することは、最新の攻撃情報に触れることができ、情報をアップデートし続ける良い方法です。</p>
                 
                   
                 
